@@ -1,0 +1,35 @@
+generated: '2026-08-26'
+method: probed
+source: https://www.paqtx.com/.well-known/
+note: >-
+  Every /.well-known/ path probed on the only host PAQ Therapeutics operates
+  (www.paqtx.com) returned 404. The site is a four-page corporate WordPress
+  install; there is no API host, no docs host and no console host to probe
+  beyond it. A negative control path (/.well-known/thisdoesnotexist-control)
+  also returned 404, confirming the host is NOT an SPA catch-all answering 200
+  for arbitrary /.well-known/* paths — these are genuine absences, not
+  suppressed hits. NO WellKnown or SecurityTxt pointer is emitted in apis.yml,
+  because nothing was served.
+hit_count: 0
+soft_404_control:
+  path: /.well-known/thisdoesnotexist-control
+  status: 404
+  bytes: 232808
+  body_type: text/html (WordPress 404 template)
+hosts:
+- host: https://www.paqtx.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
